@@ -55,22 +55,22 @@ export default {
 
   data() {
     return {
-      sideNav: false
+      sideNav: false,
     };
   },
   computed: {
     menuItems() {
       let menuItems = [
-        { icon: "home", title: "home", link: "/" },
+        { icon: 'home', title: 'home', link: '/' },
         // { icon: 'lock', title: 'sign up', link: '/signup' },
-        { icon: "lock", title: "prints", link: "/prints" },
-        { icon: "lock", title: "photo services", link: "/services" },
-        { icon: "wheel", title: "admin", link: "/signin" }
+        { icon: 'lock', title: 'prints', link: '/prints' },
+        { icon: 'lock', title: 'photo services', link: '/services' },
+        { icon: 'wheel', title: 'admin', link: '/signin' },
       ];
       if (this.userIsAuthenticated) {
         menuItems = [
-          { icon: "home", title: "add product", link: "/products/add" },
-          { icon: "shop", title: "special offers", link: "/products/offers" }
+          { icon: 'home', title: 'add product', link: '/products/add' },
+          { icon: 'shop', title: 'special offers', link: '/products/offers' },
           // { icon: "shop", title: "meals & plans", link: "/programs" }
         ];
       }
@@ -78,16 +78,16 @@ export default {
     },
     userIsAuthenticated() {
       return (
-        this.$store.getters.user !== null &&
-        this.$store.getters.user !== undefined
+        this.$store.getters.user !== null
+        && this.$store.getters.user !== undefined
       );
-    }
+    },
   },
   methods: {
     onLogout() {
-      this.$store.dispatch("logout");
-    }
-  }
+      this.$store.dispatch('logout');
+    },
+  },
 };
 </script>
 <style>
